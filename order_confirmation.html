@@ -1,16 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['order_id'])) {
-    header('Location: index.php');
-    exit;
-}
-
-$order_id = $_SESSION['order_id'];
-unset($_SESSION['order_id']);
-
-// Jika ingin menampilkan detail pesanan, bisa query database di sini
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -35,13 +22,29 @@ unset($_SESSION['order_id']);
                             </svg>
                         </div>
                         <h4 class="mb-3">Terima kasih atas pesanan Anda!</h4>
-                        <p class="mb-4">Nomor pesanan Anda adalah: <strong>#<?= $order_id ?></strong></p>
+                        <p class="mb-4">Nomor pesanan Anda adalah: <strong>#123456789</strong></p> <!-- Placeholder untuk nomor pesanan -->
                         <p>Kami telah mengirimkan detail pesanan ke email Anda.</p>
-                        <a href="index.php" class="btn btn-primary">Kembali ke Beranda</a>
+                        <a href="index.html" class="btn btn-primary">Kembali ke Beranda</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Menghasilkan nomor pesanan acak
+    const generateOrderID = () => {
+        return 'ORD-' + Math.floor(Math.random() * 1000000);
+    };
+
+    // Menampilkan nomor pesanan pada halaman
+    document.addEventListener('DOMContentLoaded', () => {
+        const orderIDElement = document.querySelector('.card-body strong');
+        if (orderIDElement) {
+            orderIDElement.textContent = generateOrderID();
+        }
+    });
+    </script>
 </body>
 </html>

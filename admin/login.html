@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Stok Produk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Update Stok Produk</h2>
+
+        <!-- Placeholder untuk pesan sukses -->
+        <div class="alert alert-success" style="display: none;">Stok berhasil diperbarui!</div>
+
+        <!-- Placeholder untuk produk yang stoknya habis -->
+        <div class="alert alert-warning mt-3">
+            <h5>Produk yang stoknya habis:</h5>
+            <ul>
+                <li>Produk 1</li>
+                <li>Produk 2</li>
+            </ul>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nama Produk</th>
+                    <th>Stok Saat Ini</th>
+                    <th>Stok Baru</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Produk 1 -->
+                <tr>
+                    <td>Produk 1</td>
+                    <td>5</td>
+                    <td>
+                        <form method="POST" class="row g-2" action="#">
+                            <input type="hidden" name="product_id" value="1">
+                            <div class="col">
+                                <input type="number" name="new_stock" class="form-control" min="0" value="5">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="restock.html?id=1" class="btn btn-success">Restock +10</a>
+                    </td>
+                </tr>
+                <!-- Produk 2 -->
+                <tr>
+                    <td>Produk 2</td>
+                    <td>0</td>
+                    <td>
+                        <form method="POST" class="row g-2" action="#">
+                            <input type="hidden" name="product_id" value="2">
+                            <div class="col">
+                                <input type="number" name="new_stock" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="restock.html?id=2" class="btn btn-success">Restock +10</a>
+                    </td>
+                </tr>
+                <!-- Produk 3 -->
+                <tr>
+                    <td>Produk 3</td>
+                    <td>10</td>
+                    <td>
+                        <form method="POST" class="row g-2" action="#">
+                            <input type="hidden" name="product_id" value="3">
+                            <div class="col">
+                                <input type="number" name="new_stock" class="form-control" min="0" value="10">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="restock.html?id=3" class="btn btn-success">Restock +10</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
